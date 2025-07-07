@@ -965,11 +965,11 @@
         <p>Currently pursuing a comprehensive degree in Software Engineering with focus on modern development practices, algorithms, data structures, and system design. Maintaining strong academic performance while actively engaging in practical projects.</p>
         <div class="education-details">
             <div class="detail-item">
-                <div class="number">6th</div>
+                <div class="number" id="semesterCounter">1st</div>
                 <div class="label">Current Semester</div>
             </div>
             <div class="detail-item">
-                <div class="number">3.48</div>
+                <div class="number" id="cgpaCounter">0.00</div>
                 <div class="label">CGPA</div>
             </div>
             <div class="detail-item">
@@ -1269,6 +1269,9 @@
             <a href="https://github.com/BILALAKRAM27" target="_blank" class="contact-link">
                 <i class="fab fa-github"></i> GitHub
             </a>
+            <a href="tel:+923217371631" class="contact-link">
+                <i class="fas fa-phone"></i> +923217371631
+            </a>
             <a href="https://www.google.com/maps/place/Sahiwal,+Punjab,+Pakistan/@30.6892485,73.1150125,12z/data=!3m1!4b1!4m6!3m5!1s0x3919022106666666:0x69c4325f04c71ab1!8m2!3d30.6892485!4d73.1150125!16s%2Fg%2F11c4022sqw?entry=ttu&g_ep=EgoyMDI1MDIwMi4wIKXMDSoASAFQAw%3D%3D" class="contact-link">
                 <i class="fas fa-map-marker-alt"></i> Sahiwal, Pakistan
             </a>
@@ -1547,6 +1550,77 @@
                 burgerMenu.classList.remove('active');
             });
         });
+    }
+
+    // Animated CGPA Counter
+    function animateCGPA() {
+        const cgpaElement = document.getElementById('cgpaCounter');
+        const targetCGPA = 3.48;
+        const duration = 2000; // 2 seconds
+        const steps = 60; // 60 steps for smooth animation
+        const increment = targetCGPA / steps;
+        const stepDuration = duration / steps;
+        
+        let currentValue = 0;
+        
+        const timer = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= targetCGPA) {
+                currentValue = targetCGPA;
+                clearInterval(timer);
+            }
+            cgpaElement.textContent = currentValue.toFixed(2);
+        }, stepDuration);
+    }
+
+    // Animated Semester Counter
+    function animateSemester() {
+        const semesterElement = document.getElementById('semesterCounter');
+        const targetSemester = 6;
+        const duration = 1500; // 1.5 seconds
+        const steps = 6; // 6 steps for semester counting
+        const stepDuration = duration / steps;
+        
+        let currentSemester = 1;
+        
+        const timer = setInterval(() => {
+            currentSemester++;
+            if (currentSemester > targetSemester) {
+                clearInterval(timer);
+            } else {
+                // Add ordinal suffix (1st, 2nd, 3rd, 4th, 5th, 6th)
+                const suffix = getOrdinalSuffix(currentSemester);
+                semesterElement.textContent = currentSemester + suffix;
+            }
+        }, stepDuration);
+    }
+
+    // Helper function to get ordinal suffix
+    function getOrdinalSuffix(num) {
+        if (num >= 11 && num <= 13) {
+            return 'th';
+        }
+        switch (num % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+        }
+    }
+
+    // Initialize both animations when education section is visible
+    const educationSection = document.querySelector('#education');
+    if (educationSection) {
+        const educationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCGPA();
+                    animateSemester();
+                    educationObserver.unobserve(entry.target);
+                }
+            });
+        });
+        educationObserver.observe(educationSection);
     }
 </script>
 
