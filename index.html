@@ -562,7 +562,7 @@
         margin-bottom: 0.5rem;
     }
 
-    /* Contact Section */
+    /* Contact Section -->
     .contact {
         background: var(--primary-color);
         color: var(--white);
@@ -1035,7 +1035,240 @@
             padding: 1.5rem;
         }
     }
-</style>
+
+    .contact-responsive-container {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 2rem;
+    }
+    .contact-animation {
+        flex: 1 1 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 220px;
+        max-width: 350px;
+    }
+    .contact-form-block {
+        flex: 2 1 340px;
+        min-width: 280px;
+        max-width: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .contact-links-below {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin-top: 2rem;
+    }
+    @media (max-width: 900px) {
+        .contact-responsive-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .contact-animation, .contact-form-block {
+            max-width: 100%;
+            min-width: 0;
+        }
+        .contact-links-below {
+            justify-content: flex-start;
+        }
+    }
+
+    .contact-animation dotlottie-wc {
+        width: 300px !important;
+        height: 300px !important;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 1.2rem;
+    }
+    .form-group input,
+    .form-group textarea {
+        width: 100%;
+        padding: 1.1rem 1rem 0.5rem 1rem;
+        border: 1.5px solid #e0e0e0;
+        border-radius: 8px;
+        background: transparent;
+        font-size: 1rem;
+        outline: none;
+        transition: border 0.2s, background 0.2s, color 0.2s;
+        color: var(--text-color);
+    }
+    body.dark-mode .form-group input,
+    body.dark-mode .form-group textarea {
+        background: #23272e !important;
+        color: #d4d4d4 !important;
+        border-color: #444 !important;
+    }
+    .form-group label {
+        position: absolute;
+        left: 1rem;
+        top: 1.1rem;
+        color: #888;
+        background: var(--white);
+        padding: 0 0.25rem;
+        font-size: 1rem;
+        pointer-events: none;
+        transition: 0.2s;
+        opacity: 1;
+    }
+    body.dark-mode .form-group label {
+        background: #23272e;
+        color: #aaa;
+    }
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label,
+    .form-group textarea:focus + label,
+    .form-group textarea:not(:placeholder-shown) + label {
+        top: -0.7rem !important;
+        left: 0.8rem !important;
+        font-size: 0.85rem !important;
+        color: var(--secondary-color) !important;
+        background: var(--white) !important;
+        padding: 0 0.3rem !important;
+        z-index: 2;
+        opacity: 1;
+    }
+    body.dark-mode .form-group input:focus + label,
+    body.dark-mode .form-group input:not(:placeholder-shown) + label,
+    body.dark-mode .form-group textarea:focus + label,
+    body.dark-mode .form-group textarea:not(:placeholder-shown) + label {
+        background: #23272e !important;
+        color: #39FF14 !important;
+    }
+
+    /* Autofill styling for light and dark mode */
+    .form-group input:-webkit-autofill,
+    .form-group textarea:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px var(--white) inset !important;
+        -webkit-text-fill-color: var(--text-color) !important;
+        transition: background-color 5000s ease-in-out 0s;
+    }
+    body.dark-mode .form-group input:-webkit-autofill,
+    body.dark-mode .form-group textarea:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px #23272e inset !important;
+        -webkit-text-fill-color: #39FF14 !important;
+    }
+
+    /* Lottie animation container fixed size */
+    .contact-animation {
+        width: 300px;
+        height: 300px;
+        min-width: 300px;
+        min-height: 300px;
+        max-width: 300px;
+        max-height: 300px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .contact-animation dotlottie-wc {
+        width: 300px !important;
+        height: 300px !important;
+        max-width: 100%;
+        max-height: 100%;
+    }
+
+    #contact-form .btn[type="submit"],
+    #contact-form button[type="submit"] {
+        background: var(--secondary-color);
+        color: #fff;
+        border: none;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+        transition: background 0.2s, color 0.2s;
+        padding: 0.6rem 0;
+        font-size: 1rem;
+        border-radius: 6px;
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+    #contact-form .btn[type="submit"]:hover,
+    #contact-form button[type="submit"]:hover {
+        background: var(--primary-color);
+        color: #fff;
+    }
+    body.dark-mode #contact-form .btn[type="submit"],
+    body.dark-mode #contact-form button[type="submit"] {
+        background: #39FF14 !important;
+        color: #23272e !important;
+    }
+    body.dark-mode #contact-form .btn[type="submit"]:hover,
+    body.dark-mode #contact-form button[type="submit"]:hover {
+        background: #00FF41 !important;
+        color: #23272e !important;
+    }
+
+    .contact-intro {
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+    .contact-intro p {
+        max-width: 500px;
+        margin: 0.5rem auto 0 auto;
+        line-height: 1.6;
+        font-size: 1.1rem;
+    }
+    .contact-responsive-container {
+        display: flex;
+        flex-direction: row;
+        gap: 3rem;
+        justify-content: center;
+        align-items: flex-start;
+        margin-top: 2rem;
+    }
+    .contact-animation {
+        flex: 1 1 320px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-width: 220px;
+        max-width: 350px;
+    }
+    .contact-form-block {
+        flex: 2 1 340px;
+        min-width: 280px;
+        max-width: 480px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .contact-links-below {
+        flex-wrap: wrap;
+        gap: 1.2rem;
+        margin-top: 2rem;
+    }
+    @media (max-width: 900px) {
+        .contact-responsive-container {
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+        .contact-animation, .contact-form-block {
+            max-width: 100%;
+            min-width: 0;
+        }
+        .contact-links-below {
+            justify-content: flex-start;
+        }
+    }
+    
+    .contact-animation dotlottie-wc {
+        width: 300px !important;
+        height: 300px !important;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    </style>
     </head>
     <body>
 <!-- Navigation -->
@@ -1083,9 +1316,9 @@
         <div class="about-image">
             <div class="coin-flip" id="coinFlip">
                 <div class="coin-flip-inner">
-                    <div class="coin-flip-front" "><div class="electric-name">MBA</div></div>
+                    <div class="coin-flip-front"><div class="electric-name">MBA</div></div>
                     <div class="coin-flip-back">
-                        <img src="assests\profile.jpg" alt="Avatar" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />
+                        <img src="assests/profile.jpg" alt="Avatar" style="width:100%;height:100%;border-radius:50%;object-fit:cover;" />
                     </div>
                 </div>
             </div>
@@ -1398,29 +1631,241 @@
 
 <!-- Contact Section -->
 <section id="contact" class="section contact">
-    <h2 class="section-title" style="color: white;">Get In Touch</h2>
-    <div class="contact-content fade-in">
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-intro" style="text-align: center; margin-bottom: 2rem">
         <h3>Let's Connect!</h3>
         <p>I'm always open to discussing new opportunities, collaborating on interesting projects, or just having a conversation about technology. Feel free to reach out!</p>
-        <div class="contact-links">
-            <a href="mailto:190204ba@gmail.com" class="contact-link">
-                <i class="fas fa-envelope"></i> 190204ba@gmail.com
-            </a>
-            <a href="https://www.linkedin.com/in/bilal-akram-081b86268/" target="_blank" class="contact-link">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="https://github.com/BILALAKRAM27" target="_blank" class="contact-link">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="https://www.google.com/maps/place/Sahiwal,+Punjab,+Pakistan/@30.6892485,73.1150125,12z/data=!3m1!4b1!4m6!3m5!1s0x3919022106666666:0x69c4325f04c71ab1!8m2!3d30.6892485!4d73.1150125!16s%2Fg%2F11c4022sqw?entry=ttu&g_ep=EgoyMDI1MDIwMi4wIKXMDSoASAFQAw%3D%3D" class="contact-link">
-                <i class="fas fa-map-marker-alt"></i> Sahiwal, Pakistan
-            </a>
-        </div>
-        <div style="margin-top: 2rem;">
-            <button onclick="downloadResume()" class="btn" style="background-color: white;">Download Resume</button>
-        </div>
     </div>
+    <div class="contact-responsive-container">
+        <div class="contact-animation">
+            <!-- Lottie Animations: Only one is visible at a time -->
+            <dotlottie-wc id="lottie-light" src="https://lottie.host/fe9ca022-9b97-422e-9817-51cf2b9f3f96/tmYdfBhJtu.lottie" style="width: 300px; height: 300px; display: block;" speed="1" autoplay loop></dotlottie-wc>   
+            <dotlottie-wc id="lottie-dark" src="https://lottie.host/bdef8a75-21d2-4ec6-986f-db2a8694819b/fMYiJC4rtK.lottie" style="width: 300px; height: 300px; display: none;" speed="1" autoplay loop></dotlottie-wc>
+        </div>
+        <div class="contact-form-block">
+           
+            <form id="contact-form" style="max-width: 420px; margin: 0; background: var(--white); box-shadow: 0 8px 32px rgba(0,0,0,0.12); border-radius: 16px; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 1.5rem; align-items: stretch;">
+                <div class="form-group">
+                    <input type="text" name="user_name" id="user_name" required placeholder=" " />
+                    <label for="user_name">Your Name</label>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="user_email" id="user_email" required placeholder=" " />
+                    <label for="user_email">Your Email</label>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="message" required rows="5" placeholder=" "></textarea>
+                    <label for="message">Your Message</label>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.6rem 0; font-size: 1rem; border-radius: 6px; margin-top: 0.5rem; background-color: var(--secondary-color); color: white; border: none;">Send Message</button>
+                <div id="form-status" style="margin-top: 0.5rem; color: #39FF14; font-weight: bold; min-height: 1.2em; text-align: center;"></div>
+            </form>
+        </div></div>
+            <div class="contact-links contact-links-below" style="margin-top: 2rem; display: flex; flex-direction: row; gap: 1.5rem; justify-content: center;">
+                <a href="https://www.linkedin.com/in/bilal-akram-081b86268/" target="_blank" class="contact-link">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+                <a href="https://github.com/BILALAKRAM27" target="_blank" class="contact-link">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+                <a href="https://www.google.com/maps/place/Sahiwal,+Punjab,+Pakistan/@30.6892485,73.1150125,12z/data=!3m1!4b1!4m6!3m5!1s0x3919022106666666:0x69c4325f04c71ab1!8m2!3d30.6892485!4d73.1150125!16s%2Fg%2F11c4022sqw?entry=ttu&g_ep=EgoyMDI1MDIwMi4wIKXMDSoASAFQAw%3D%3D" class="contact-link">
+                    <i class="fas fa-map-marker-alt"></i> Sahiwal, Pakistan
+                </a>
+            </div>
+        
+    
 </section>
+<script src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+    
+document.addEventListener('DOMContentLoaded', function() {
+    // Theme toggle and Lottie animation switching
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const lottieLight = document.getElementById('lottie-light');
+    const lottieDark = document.getElementById('lottie-dark');
+
+    // Particle color palettes
+    const defaultParticleColors = ['rgba(255,255,255,0.5)'];
+    const fireParticleColors = ['#ff4500', '#ffae42', '#ffd700', '#ff7300', '#ffb347', '#fff700'];
+
+    function createParticles(colors) {
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+        // Remove old particles
+        hero.querySelectorAll('.particle').forEach(p => p.remove());
+        const particleCount = 50;
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            const color = colors[Math.floor(Math.random() * colors.length)];
+            particle.style.cssText = `
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                background: ${color};
+                border-radius: 50%;
+                animation: float ${Math.random() * 6 + 4}s infinite linear;
+                left: ${Math.random() * 100}%;
+                top: ${Math.random() * 100}%;
+                opacity: ${Math.random() * 0.5 + 0.3};
+                pointer-events: none;
+            `;
+            hero.appendChild(particle);
+        }
+    }
+
+    function updateParticlesForMode() {
+        if (document.body.classList.contains('dark-mode')) {
+            createParticles(fireParticleColors);
+        } else {
+            createParticles(defaultParticleColors);
+        }
+    }
+
+    // On page load, set theme and icon from localStorage
+    if (localStorage.getItem('darkMode') === 'true') {
+        document.body.classList.add('dark-mode');
+    } else {
+        document.body.classList.remove('dark-mode');
+    }
+    if (darkModeToggle) {
+        darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            updateParticlesForMode();
+            setTimeout(() => { location.reload(); }, 100);
+        });
+    }
+
+    function updateLottieForMode() {
+        if (!lottieLight || !lottieDark) return;
+        const isDark = document.body.classList.contains('dark-mode');
+        if (isDark) {
+            lottieLight.style.display = 'none';
+            lottieDark.style.display = 'block';
+        } else {
+            lottieLight.style.display = 'block';
+            lottieDark.style.display = 'none';
+        }
+    }
+    updateLottieForMode();
+    updateParticlesForMode();
+
+    // Coin flip functionality
+    const coin = document.getElementById('coinFlip');
+    if (coin) {
+        coin.addEventListener('click', function() {
+            coin.classList.toggle('flipped');
+        });
+    }
+
+    // Animated CGPA Counter
+    function animateCGPA() {
+        const cgpaElement = document.getElementById('cgpaCounter');
+        if (!cgpaElement) return;
+        const targetCGPA = 3.48;
+        const duration = 2000; // 2 seconds
+        const steps = 60; // 60 steps for smooth animation
+        const increment = targetCGPA / steps;
+        const stepDuration = duration / steps;
+        let currentValue = 0;
+        const timer = setInterval(() => {
+            currentValue += increment;
+            if (currentValue >= targetCGPA) {
+                currentValue = targetCGPA;
+                clearInterval(timer);
+            }
+            cgpaElement.textContent = currentValue.toFixed(2);
+        }, stepDuration);
+    }
+
+    // Animated Semester Counter
+    function animateSemester() {
+        const semesterElement = document.getElementById('semesterCounter');
+        if (!semesterElement) return;
+        const targetSemester = 6;
+        const duration = 1500; // 1.5 seconds
+        const steps = 6; // 6 steps for semester counting
+        const stepDuration = duration / steps;
+        let currentSemester = 1;
+        const timer = setInterval(() => {
+            currentSemester++;
+            if (currentSemester > targetSemester) {
+                clearInterval(timer);
+            } else {
+                // Add ordinal suffix (1st, 2nd, 3rd, 4th, 5th, 6th)
+                const suffix = getOrdinalSuffix(currentSemester);
+                semesterElement.textContent = currentSemester + suffix;
+            }
+        }, stepDuration);
+    }
+    function getOrdinalSuffix(num) {
+        if (num >= 11 && num <= 13) {
+            return 'th';
+        }
+        switch (num % 10) {
+            case 1: return 'st';
+            case 2: return 'nd';
+            case 3: return 'rd';
+            default: return 'th';
+        }
+    }
+    // Initialize both animations when education section is visible
+    const educationSection = document.querySelector('#education');
+    if (educationSection) {
+        const educationObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCGPA();
+                    animateSemester();
+                    educationObserver.unobserve(entry.target);
+                }
+            });
+        });
+        educationObserver.observe(educationSection);
+    }
+
+    // Skills animation on scroll
+    function animateSkills() {
+        const skillTags = document.querySelectorAll('.skill-tag');
+        skillTags.forEach((tag, index) => {
+            tag.style.animationDelay = `${index * 0.1}s`;
+            tag.classList.add('animate-skill');
+        });
+    }
+    const skillsSection = document.querySelector('#skills');
+    if (skillsSection) {
+        const skillsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateSkills();
+                    skillsObserver.unobserve(entry.target);
+                }
+            });
+        });
+        skillsObserver.observe(skillsSection);
+    }
+
+    // Mobile menu functionality
+    const burgerMenu = document.getElementById('burgerMenu');
+    const navLinks = document.getElementById('navLinks');
+    if (burgerMenu && navLinks) {
+        burgerMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            burgerMenu.classList.toggle('active');
+        });
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                burgerMenu.classList.remove('active');
+            });
+        });
+    }
+});
+</script>
 
 <footer>
     <p>&copy; 2025 Muhammad Bilal Akram. All rights reserved.</p>
@@ -1437,7 +1882,25 @@
     </div>
 </div>
 
+
 <script>
+    (function() {
+        emailjs.init('TwkeRdu1biTsRwgF3'); // Replace with your EmailJS user ID
+    })();
+
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const form = this;
+        const status = document.getElementById('form-status');
+        status.textContent = 'Sending...';
+        emailjs.sendForm('service_xcrji6c', 'template_3dwjv1d', form)
+            .then(function() {
+                status.textContent = 'Message sent successfully!';
+                form.reset();
+            }, function(error) {
+                status.textContent = 'Failed to send message. Please try again later.';
+            });
+    });
     // Project modal functionality
     const projectData = {
     project1: {
@@ -1543,6 +2006,7 @@
     }
 
     // Initialize typing effect when page loads
+    
     window.addEventListener('load', () => {
         const heroTitle = document.querySelector('.hero h1');
         if (heroTitle) {
@@ -1691,7 +2155,7 @@
             });
         });
     }
-
+    const darkModeToggle  = document.getElementById('darkModeToggle');
     // Animated CGPA Counter
     function animateCGPA() {
         const cgpaElement = document.getElementById('cgpaCounter');
@@ -1762,6 +2226,9 @@
         });
         educationObserver.observe(educationSection);
     }
+
+
+
 </script>
 
 
