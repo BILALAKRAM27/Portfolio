@@ -1268,7 +1268,36 @@
         max-width: 100%;
         max-height: 100%;
     }
-    </style>
+
+    #darkModeToggle {
+        background: #fff;
+        color: var(--secondary-color);
+        border: 2px solid var(--secondary-color);
+        border-radius: 50px;
+        font-size: 1.3rem;
+        font-weight: bold;
+        box-shadow: 0 2px 8px rgba(52,152,219,0.08);
+        transition: background 0.2s, color 0.2s, border 0.2s;
+        padding: 0.4rem 1rem;
+        cursor: pointer;
+    }
+    #darkModeToggle:hover {
+        background: var(--secondary-color);
+        color: #fff;
+    }
+    body.dark-mode #darkModeToggle {
+        background: #23272e;
+        color: #39FF14;
+        border: 2px solid #39FF14;
+    }
+    body.dark-mode #darkModeToggle:hover {
+        background: #39FF14;
+        color: #23272e;
+    }
+    body.dark-mode .btn.btn-primary[onclick*="downloadResume"] {
+        color: #000 !important;
+    }
+</style>
     </head>
     <body>
 <!-- Navigation -->
