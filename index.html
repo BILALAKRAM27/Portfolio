@@ -32,6 +32,9 @@
         line-height: 1.6;
         color: var(--text-color);
         overflow-x: hidden;
+        min-height: 100vh;
+        position: relative;
+        padding-bottom: 100px; /* Adjust if footer height changes */
     }
 
     /* Navigation */
@@ -603,6 +606,11 @@
         color: var(--white);
         text-align: center;
         padding: 2rem 0;
+        position:absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        z-index: 100;
     }
 
     /* Animations */
@@ -1297,7 +1305,23 @@
     body.dark-mode .btn.btn-primary[onclick*="downloadResume"] {
         color: #000 !important;
     }
-</style>
+    .contact-link {
+        text-decoration: none !important;
+        color: var(--secondary-color) !important;
+        font-weight: 500;
+        transition: color 0.2s;
+    }
+    .contact-link:hover {
+        color: var(--primary-color) !important;
+        text-decoration: none !important;
+    }
+    body.dark-mode .contact-link {
+        color: #39FF14 !important;
+    }
+    body.dark-mode .contact-link:hover {
+        color: #00FF41 !important;
+    }
+    </style>
     </head>
     <body>
 <!-- Navigation -->
@@ -1704,24 +1728,23 @@
             <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
                 <button onclick="downloadResume()" class="btn btn-primary" style="background: var(--secondary-color); color: #fff; border: none; border-radius: 6px; padding: 0.6rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer;">Download Resume</button>
             </div>
-            <style>
-            .contact-link {
-                text-decoration: none !important;
-                color: var(--secondary-color) !important;
-                font-weight: 500;
-                transition: color 0.2s;
-            }
-            .contact-link:hover {
-                color: var(--primary-color) !important;
-                text-decoration: none !important;
-            }
-            body.dark-mode .contact-link {
-                color: #39FF14 !important;
-            }
-            body.dark-mode .contact-link:hover {
-                color: #00FF41 !important;
-            }
-            </style>
+
+            <footer>
+                <p>&copy; 2025 Muhammad Bilal Akram. All rights reserved.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                    Built with HTML, CSS, and JavaScript
+                </p>
+            </footer>
+            
+            <!-- Project Modals -->
+            <div id="projectModal" class="modal">
+                <div class="modal-content">
+                    <button class="modal-close" onclick="closeModal()">&times;</button>
+                    <div id="modalContent"></div>
+                </div>
+            </div>
+
+            
         
     
 </section>
@@ -1934,25 +1957,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.removeChild(link);
     }
 });
-</script>
-
-<footer>
-    <p>&copy; 2025 Muhammad Bilal Akram. All rights reserved.</p>
-    <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
-        Built with HTML, CSS, and JavaScript
-    </p>
-</footer>
-
-<!-- Project Modals -->
-<div id="projectModal" class="modal">
-    <div class="modal-content">
-        <button class="modal-close" onclick="closeModal()">&times;</button>
-        <div id="modalContent"></div>
-    </div>
-</div>
-
-
-<script>
     (function() {
         emailjs.init('TwkeRdu1biTsRwgF3'); // Replace with your EmailJS user ID
     })();
@@ -1966,6 +1970,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function() {
                 status.textContent = 'Message sent successfully!';
                 form.reset();
+                // Optionally reload after a delay:
+                // setTimeout(() => location.reload(), 1000);
             }, function(error) {
                 status.textContent = 'Failed to send message. Please try again later.';
             });
@@ -2186,7 +2192,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Add this JS after your other script logic
-    const darkModeToggle = document.getElementById('darkModeToggle');
+   
     if (darkModeToggle) {
         darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
