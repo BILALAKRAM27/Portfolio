@@ -1672,6 +1672,27 @@
                     <i class="fas fa-map-marker-alt"></i> Sahiwal, Pakistan
                 </a>
             </div>
+            <div style="display: flex; justify-content: center; margin-top: 1.5rem;">
+                <button onclick="downloadResume()" class="btn btn-primary" style="background: var(--secondary-color); color: #fff; border: none; border-radius: 6px; padding: 0.6rem 1.5rem; font-size: 1rem; font-weight: 600; cursor: pointer;">Download Resume</button>
+            </div>
+            <style>
+            .contact-link {
+                text-decoration: none !important;
+                color: var(--secondary-color) !important;
+                font-weight: 500;
+                transition: color 0.2s;
+            }
+            .contact-link:hover {
+                color: var(--primary-color) !important;
+                text-decoration: none !important;
+            }
+            body.dark-mode .contact-link {
+                color: #39FF14 !important;
+            }
+            body.dark-mode .contact-link:hover {
+                color: #00FF41 !important;
+            }
+            </style>
         
     
 </section>
@@ -1863,6 +1884,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 burgerMenu.classList.remove('active');
             });
         });
+    }
+
+    // Download resume function
+    window.downloadResume = function() {
+        const resumeUrl = 'assests/Resume.pdf'; // Make sure this path is correct and the file exists
+        const link = document.createElement('a');
+        link.href = resumeUrl;
+        link.download = 'Bilal_Akram_Resume.pdf';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     }
 });
 </script>
