@@ -1733,8 +1733,26 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Theme toggle and Lottie animation switching
     const darkModeToggle = document.getElementById('darkModeToggle');
-    const lottieLight = document.getElementById('lottie-light');
-    const lottieDark = document.getElementById('lottie-dark');
+
+    // Function to reload Lottie animation
+    function reloadLottieAnimation(isDark) {
+        const container = document.querySelector('.contact-animation');
+        if (!container) return;
+        container.innerHTML = '';
+        const lottie = document.createElement('dotlottie-wc');
+        if (isDark) {
+            lottie.id = 'lottie-dark';
+            lottie.setAttribute('src', 'https://lottie.host/bdef8a75-21d2-4ec6-986f-db2a8694819b/fMYiJC4rtK.lottie');
+        } else {
+            lottie.id = 'lottie-light';
+            lottie.setAttribute('src', 'https://lottie.host/fe9ca022-9b97-422e-9817-51cf2b9f3f96/tmYdfBhJtu.lottie');
+        }
+        lottie.setAttribute('style', 'width: 300px; height: 300px; display: block;');
+        lottie.setAttribute('speed', '1');
+        lottie.setAttribute('autoplay', '');
+        lottie.setAttribute('loop', '');
+        container.appendChild(lottie);
+    }
 
     // Particle color palettes
     const defaultParticleColors = ['rgba(255,255,255,0.5)'];
@@ -1785,23 +1803,13 @@ document.addEventListener('DOMContentLoaded', function() {
         darkModeToggle.addEventListener('click', () => {
             document.body.classList.toggle('dark-mode');
             localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+            darkModeToggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+            reloadLottieAnimation(document.body.classList.contains('dark-mode'));
             updateParticlesForMode();
-            setTimeout(() => { location.reload(); }, 100);
         });
     }
 
-    function updateLottieForMode() {
-        if (!lottieLight || !lottieDark) return;
-        const isDark = document.body.classList.contains('dark-mode');
-        if (isDark) {
-            lottieLight.style.display = 'none';
-            lottieDark.style.display = 'block';
-        } else {
-            lottieLight.style.display = 'block';
-            lottieDark.style.display = 'none';
-        }
-    }
-    updateLottieForMode();
+    reloadLottieAnimation(document.body.classList.contains('dark-mode'));
     updateParticlesForMode();
 
     // Coin flip functionality
