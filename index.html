@@ -1321,7 +1321,62 @@
     body.dark-mode .contact-link:hover {
         color: #00FF41 !important;
     }
-    </style>
+
+    @media (max-width: 1170px) {
+        nav .nav-container {
+            flex-direction: row;
+            align-items: center;
+            padding: 0 1rem;
+        }
+        .nav-links {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100vw;
+            background: var(--white);
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+        }
+        .nav-links.active {
+            display: flex;
+        }
+        .burger-menu {
+            display: flex !important;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        .burger-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 3px 0;
+            transition: var(--transition);
+        }
+        .nav-links li {
+            margin: 1rem 0;
+        }
+        .logo {
+            font-size: 1.3rem;
+        }
+        /* Ensure toggle and burger are side by side */
+        .nav-container > div[style*='display: flex'] {
+            margin-left: auto;
+        }
+    }
+    @media (max-width: 600px) {
+        .nav-container {
+            padding: 0 0.5rem;
+        }
+        .nav-links {
+            padding: 1rem 1rem;
+        }
+    }
+</style>
     </head>
     <body>
 <!-- Navigation -->
@@ -1340,11 +1395,13 @@
             <li><a href="#achievements">Achievements</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <button id="darkModeToggle" class="btn btn-secondary" style="margin-left: 1rem;">🌙</button>
-        <div class="burger-menu" id="burgerMenu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <button id="darkModeToggle" class="btn btn-secondary" style="margin-left: 0;">🌙</button>
+            <div class="burger-menu" id="burgerMenu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </div>
 </nav>
