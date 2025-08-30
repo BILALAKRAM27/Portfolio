@@ -414,8 +414,12 @@
     }
 
     .skill-tag:hover {
-        background: var(--primary-color);
+        background: var(--gradient, linear-gradient(45deg, #764ba2  0%, #667eea 100%));
         transform: scale(1.05);
+    }
+    /* with the below css format only the future goals text will get bold since it matches the query */
+    p[style*="text-align: center"][style*="padding: 1rem"]:hover {
+    font-weight: 700 !important;
     }
 
     /* Projects Section */
@@ -1066,6 +1070,7 @@
         min-width: 220px;
         max-width: 350px;
     }
+    
     .contact-form-block {
         flex: 2 1 340px;
         min-width: 280px;
@@ -1416,7 +1421,7 @@
 <section id="home" class="hero">
     <div class="hero-content">
         <h1 class="hero-title">Muhammad Bilal Akram</h1>
-        <p class="subtitle">Software Engineering Student | 6th Semester</p>
+        <p class="subtitle">Software Engineering Student | 7th Semester</p>
         <p class="description">Passionate about creating innovative software solutions and building scalable applications. Dedicated to continuous learning and applying modern development practices to solve real-world problems.</p>
         <div class="cta-buttons">
             <a href="#projects" class="btn btn-primary">View My Work</a>
@@ -1441,7 +1446,7 @@
         </div>
         <div class="about-text">
             <h3>About Me - Software Engineering Journey</h3>
-            <p>I'm a passionate Software Engineering student in my 6th semester, driven by curiosity and a love for problem-solving through code. My journey in technology started with a fascination for how applications work, which evolved into a commitment to building meaningful digital solutions.</p>
+            <p>I'm a passionate Software Engineering student in my 7th semester, driven by curiosity and a love for problem-solving through code. My journey in technology started with a fascination for how applications work, which evolved into a commitment to building meaningful digital solutions.</p>
             <p>My goals include mastering full-stack development, contributing to impactful projects, and eventually specializing in areas like AI, cybersecurity, or mobile app development. I believe in writing clean, maintainable code and following industry best practices.</p>
             <p>Throughout my academic journey, I've developed strong technical skills while also focusing on soft skills like teamwork, communication, and leadership. I'm always eager to learn new technologies and collaborate with fellow developers on innovative projects.</p>
         </div>
@@ -1480,7 +1485,7 @@
             <h3>Programming Languages</h3>
             <div class="skill-tags">
                 <span class="skill-tag">Python</span>
-                <span class="skill-tag">Java</span>
+                <span class="skill-tag">VDMLS</span>
                 <span class="skill-tag">C++</span>
                 <span class="skill-tag">JavaScript</span>
                 <span class="skill-tag">HTML5</span>
@@ -1492,31 +1497,51 @@
             <div class="skill-tags">
                 <span class="skill-tag">Django</span>
                 <span class="skill-tag">Node.js</span>
-                <span class="skill-tag">Express</span>
                 <span class="skill-tag">Bootstrap</span>
+                <span class="skill-tag">Daphne</span>
+                <span class="skill-tag">Streamlit</span>
                 <span class="skill-tag">NestJS</span>
             </div>
         </div>
+        <div class="skill-category fade-in">
+            <h3>Machine Learning / Data Science</h3>
+            <div class="skill-tags">
+                <span class="skill-tag">Pandas</span>
+                <span class="skill-tag">NumPy</span>
+                <span class="skill-tag">Scikit-learn</span>
+                <span class="skill-tag">TensorFlow</span>
+                <span class="skill-tag">Keras</span>
+                <span class="skill-tag">Seaborn.io</span>
+                <span class="skill-tag">Matplotlib</span>
+                <span class="skill-tag">Pytorch</span>
+            </div>
+        </div>
+
         <div class="skill-category fade-in">
             <h3>Tools & Technologies</h3>
             <div class="skill-tags">
                 <span class="skill-tag">Git</span>
                 <span class="skill-tag">GitHub</span>
-                <span class="skill-tag">VS Code</span>
                 <span class="skill-tag">JIRA</span>
-                <span class="skill-tag">Trello</span>
                 <span class="skill-tag">Figma</span>
                 <span class="skill-tag">Postman</span>
+                <span class="skill-tag">Draw.io</span>
+                <span class="skill-tag">Lucidchart</span>
+                <span class="skill-tag">dbdiagram.io</span>
             </div>
         </div>
         <div class="skill-category fade-in">
             <h3>Databases & APIs</h3>
             <div class="skill-tags">
                 <span class="skill-tag">SQL</span>
+                <span class="skill-tag">SQLite3</span>
                 <span class="skill-tag">MySQL</span>
+                <span class="skill-tag">MsSQL</span>
+                <span class="skill-tag">Neon</span>
                 <span class="skill-tag">PostgreSQL</span>
                 <span class="skill-tag">MongoDB</span>
                 <span class="skill-tag">REST APIs</span>
+                <span class="skill-tag">Stripe APIs</span>
             </div>
         </div>
         <div class="skill-category fade-in">
@@ -1527,6 +1552,7 @@
                 <span class="skill-tag">Problem-Solving</span>
                 <span class="skill-tag">Leadership</span>
                 <span class="skill-tag">Time Management</span>
+                <span class="skill-tag">Adaptability</span>
             </div>
         </div>
     </div>
@@ -1600,7 +1626,7 @@
                     <span class="tech-tag"><i class="devicon-cplusplus-plain colored"></i> C++</span>
                     <span class="tech-tag"><img src="assests/bluetooth.svg" alt="HC-05 Bluetooth Module" style="width: 20px; height: 20px;"> Bluetooth Module</span>
                     <span class="tech-tag">
-                        <img src="assests/motor-controller.svg" alt="Scikit-learn" style="width: 20px; height: 20px;">L298N Motor Driver
+                        <img src="assests/motor-controller.svg" alt="motor-controller" style="width: 20px; height: 20px;">L298N Motor Driver
                     </span>
                     <span class="tech-tag"><i class="devicon-android-plain colored"></i> Android App</span>
                 </div>
@@ -1694,13 +1720,13 @@
                         <img src="assests/scikitlearn.svg" alt="Scikit-learn" style="width: 20px; height: 20px;"> Scikit-learn
                     </span>
                     <span class="tech-tag">
-                        <img src="assests/lime.png" alt="Scikit-learn" style="width: 20px; height: 20px;">Lime
+                        <img src="assests/lime.png" alt="Lime" style="width: 20px; height: 20px;">Lime
                     </span>
                     <span class="tech-tag">
-                        <img src="assests/joblib.png" alt="Scikit-learn" style="width: 20px; height: 20px;">Joblib
+                        <img src="assests/joblib.png" alt="joblib" style="width: 20px; height: 20px;">Joblib
                     </span>
                     <span class="tech-tag">
-                        <img src="assests/seaborn-1.svg" alt="Scikit-learn" style="width: 20px; height: 20px;">Seaborn
+                        <img src="assests/seaborn-1.svg" alt="Seaborn "style="width: 20px; height: 20px;">Seaborn
                     </span>
                     <span class="tech-tag"><i class="devicon-matplotlib-plain colored"></i> matplotlib </span>
                 </div>
@@ -1713,7 +1739,7 @@
         </div>
 
         <div class="project-card fade-in" onclick="openModal('project8')">
-            <div class="project-image"><img src="assests/minst.png" alt="Email Spam Classifier" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <div class="project-image"><img src="assests/minst.png" alt="MNIST Digit Recognition" style="width: 100%; height: 100%; object-fit: cover;"></div>
             <div class="project-content">
                 <h3>MNIST Digit Recognition</h3>
                 <h4>A Complete Machine Learning Project for Handwritten Digit Recognition</h4>
@@ -1725,13 +1751,13 @@
                         <img src="assests/scikitlearn.svg" alt="Scikit-learn" style="width: 20px; height: 20px;"> Scikit-learn
                     </span>
                     <span class="tech-tag">
-                        <img src="assests/tensorflow-svgrepo-com.svg" alt="Scikit-learn" style="width: 20px; height: 20px;">TensorFlow
+                        <img src="assests/tensorflow-svgrepo-com.svg" alt="TensorFlow" style="width: 20px; height: 20px;">TensorFlow
                     </span>
                     <span class="tech-tag">
-                        <img src="assests/joblib.png" alt="Scikit-learn" style="width: 20px; height: 20px;">Joblib
+                        <img src="assests/joblib.png" alt="joblib" style="width: 20px; height: 20px;">Joblib
                     </span>
                     <span class="tech-tag">
-                        <img src="assests/keras-svgrepo-com.svg" alt="Scikit-learn" style="width: 20px; height: 20px;">Keras
+                        <img src="assests/keras-svgrepo-com.svg" alt="Keras" style="width: 20px; height: 20px;">Keras
                     </span>
                     <span class="tech-tag"><i class="devicon-matplotlib-plain colored"></i> matplotlib </span>
                 </div>
@@ -1780,38 +1806,54 @@
 <section id="experience" class="section experience">
     <h2 class="section-title">Experience</h2>
     <div class="experience-grid">
+        
         <div class="exp-card fade-in">
-            <h3>Prospective Software Development Intern</h3>
-            <p class="company">Developerhub Corporation</p>
-            <p class="duration"></p>
-            <p>
-                Exploring an opportunity to work as a Software Development Intern, where I would focus on contributing to web application development projects, enhancing back-end functionalities, and collaborating with senior developers to learn industry-standard development workflows. Technologies involved may include Python, Django, GitHub, and REST APIs.
-            </p>
+            <h3>Full-Stack Software Development Intern</h3>
+            <a style="text-decoration: none;" href="https://www.linkedin.com/company/developershub-corporation/posts/?feedView=all" class="company">Developerhub Corporation</a>
+            <p class="duration"><strong>5th July – 31st August (2025)</strong></p>
+            <p>Successfully completed an internship focused on full-stack web application development and deployment. Key projects include:</p>
+            <ul>
+                <li><strong>MarketVibe:</strong> A modern E-Commerce and business insights and analytics platform developed with Django, SQLite3, and Stripe APIs, featuring interactive dashboards and user-friendly interfaces.</li>
+                <li><strong>CoFound:</strong> A collaborative platform connecting entrepreneurs with investors, built using Django, SQLite3, and GitHub for version control, and deployed on PythonAnywhere.</li>
+            </ul>
+            <p><strong>Skills gained:</strong> backend development, API integration, database management, collaborative software workflows, and deploying scalable web applications.</p>
         </div>
+        
         <div class="exp-card fade-in">
             <h3>Personal & Academic Projects</h3>
             <p class="company">Independent / University Projects</p>
-            <p class="duration">2023 – Present</p>
-            <p>
-                Completed various academic and personal projects focusing on web development, computer vision, and AI. Key projects include:
-                <ul>
-                    <li><strong>BUZTable:</strong> Restaurant reservation and food ordering system (Django, PostgreSQL).</li>
-                    <li><strong>Real-Time Sign Language Interpreter:</strong> AI-based ASL translator with Mediapipe, Transformers, and Streamlit.</li>
-                    <li><strong>Bluetooth-Controlled Remote Car:</strong> Hardware-software integrated IoT project using Arduino and Android app.</li>
-                </ul>
-                Skills gained include full-stack development, machine learning model integration, database design, and hardware interfacing.
-            </p>
+            <p class="duration"><strong>2023 – Present</strong></p>
+            <p>Completed various academic and personal projects focusing on web development, computer vision, and AI. Key projects include:</p>
+            <ul>
+                <li><strong>BUZTable:</strong> Restaurant reservation and food ordering system (Django, PostgreSQL).</li>
+                <li><strong>Real-Time Sign Language Interpreter:</strong> AI-based ASL translator with Mediapipe, Transformers, and Streamlit.</li>
+                <li><strong>Bluetooth-Controlled Remote Car:</strong> Hardware-software integrated IoT project using Arduino and Android app.</li>
+            </ul>
+            <p><strong>Skills gained:</strong> full-stack development, machine learning model integration, database design, and hardware interfacing.</p>
         </div>
+        
+        <div class="exp-card fade-in">
+            <h3>Machine Learning Intern</h3>
+            <a style="text-decoration: none;" href="https://www.linkedin.com/company/archtechnologiespk/posts/?feedView=all" class="company">Arch Technologies</a>
+            <p class="duration"><strong>1st August, 2025 (Ongoing)</strong></p>
+            <p>Currently pursuing an internship focused on developing and deploying machine learning models for real-world applications. Key projects completed so far include:</p>
+            <ul>
+                <li><strong>Email Spam Classifier:</strong> Implemented a text classification model using Python, Scikit-learn, and NLP techniques to distinguish between spam and legitimate emails.</li>
+                <li><strong>MNIST Digit Recognizer:</strong> Built a digit recognition system with Logistic Regression and Convolutional Neural Networks (CNNs), deployed through a Streamlit web app for interactive predictions.</li>
+            </ul>
+            <p><strong>Skills being developed:</strong> supervised learning, deep learning with neural networks, natural language processing, model evaluation, and deployment of ML applications.</p>
+        </div>
+        
         <div class="exp-card fade-in">
             <h3>Open Source Learning</h3>
             <p class="company">Personal Learning & GitHub Projects</p>
             <p class="duration">Ongoing</p>
-            <p>
-                Actively learning open-source development practices by studying popular repositories on GitHub and replicating small projects. Currently working on improving my skills in Git version control, code collaboration, and documentation to prepare for future open-source contributions.
-            </p>
+            <p>Actively learning open-source development practices by studying popular repositories on GitHub and replicating small projects. Currently working on improving my skills in Git version control, code collaboration, and documentation to prepare for future open-source contributions.</p>
         </div>
+
     </div>
 </section>
+
 
 
 <!-- Interests Section -->
@@ -1840,7 +1882,7 @@
         </div>
         <div class="skill-category fade-in">
             <h3>Future Goals</h3>
-            <p style="text-align: center; padding: 1rem; color: #666;">
+            <p style="text-align: center; padding: 1rem; " class="skill-tag">
                 Aspiring to become a proficient software engineer specializing in scalable applications and emerging technologies. 
                 Passionate about contributing to innovative projects that make a positive impact on society.
             </p>
@@ -1861,7 +1903,7 @@
         </div>
         <div class="achievement-card fade-in">
             <div class="achievement-icon">🎖️</div>
-            <h3>Certificate of Appreciation – Palestine Fundraiser and Awareness Camp</h3>
+            <h3>Certificate of Appreciation Palestine Fundraiser and Awareness Camp</h3>
             <p>
                 Received a certificate from the university for volunteering and contributing to a charity fundraising and awareness camp in support of Palestine during a campus-wide event.
             </p>
@@ -2049,7 +2091,7 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateCGPA() {
         const cgpaElement = document.getElementById('cgpaCounter');
         if (!cgpaElement) return;
-        const targetCGPA = 3.48;
+        const targetCGPA = 3.40;
         const duration = 2000; // 2 seconds
         const steps = 60; // 60 steps for smooth animation
         const increment = targetCGPA / steps;
@@ -2069,9 +2111,9 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateSemester() {
         const semesterElement = document.getElementById('semesterCounter');
         if (!semesterElement) return;
-        const targetSemester = 6;
+        const targetSemester = 7;
         const duration = 1500; // 1.5 seconds
-        const steps = 6; // 6 steps for semester counting
+        const steps = 7; // 6 steps for semester counting
         const stepDuration = duration / steps;
         let currentSemester = 1;
         const timer = setInterval(() => {
@@ -2495,7 +2537,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animated CGPA Counter
     function animateCGPA() {
         const cgpaElement = document.getElementById('cgpaCounter');
-        const targetCGPA = 3.48;
+        const targetCGPA = 3.40;
         const duration = 2000; // 2 seconds
         const steps = 60; // 60 steps for smooth animation
         const increment = targetCGPA / steps;
@@ -2516,9 +2558,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Animated Semester Counter
     function animateSemester() {
         const semesterElement = document.getElementById('semesterCounter');
-        const targetSemester = 6;
+        const targetSemester = 7;
         const duration = 1500; // 1.5 seconds
-        const steps = 6; // 6 steps for semester counting
+        const steps = 7; // 6 steps for semester counting
         const stepDuration = duration / steps;
         
         let currentSemester = 1;
