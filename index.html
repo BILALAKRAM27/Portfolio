@@ -476,12 +476,17 @@
     }
 
     .tech-tag {
-        background: var(--light-bg);
-        color: var(--text-color);
-        padding: 0.3rem 0.8rem;
-        border-radius: 15px;
-        font-size: 0.8rem;
-    }
+    background: var(--light-bg);
+    color: var(--text-color);
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+
+    display: inline-flex;       /* make it flex */
+    align-items: center;        /* vertical center */
+    justify-content: center;    /* horizontal center */
+    gap: 0.4rem;                /* space between img & text */
+}
 
     .project-links {
         display: flex;
@@ -602,7 +607,7 @@
 
     /* Footer */
     footer {
-        background: var(--text-color);
+        background: var(--gradient);
         color: var(--white);
         text-align: center;
         padding: 2rem 0;
@@ -1051,6 +1056,7 @@
         justify-content: center;
         align-items: flex-start;
         margin-top: 2rem;
+        margin-bottom: 2rem;
     }
     .contact-animation {
         flex: 1 1 320px;
@@ -1536,7 +1542,7 @@
             <div class="project-content">
                 <h3>E-Commerce Platform</h3>
                 <h4>BUZTable (Restaurant Reservation & Food Ordering System)</h4>
-                <p>A full-stack e-commerce solution with modern UI/UX, secure payment processing, and real-time inventory management.</p>
+                <p>A comprehensive full-stack e-commerce platform designed for restaurant reservations and online food ordering. The system features integrated restaurant reviews, a modern and responsive UI/UX, secure payment processing, and real-time inventory management to ensure a seamless dining and ordering experience.</p>
                 <div class="project-tech">
                     <span class="tech-tag"><i class="devicon-html5-plain colored"></i> HTML</span>
                     <span class="tech-tag"><i class="devicon-css3-plain colored"></i> CSS</span>
@@ -1544,7 +1550,9 @@
                     <span class="tech-tag"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</span>
                     <span class="tech-tag"><i class="devicon-django-plain colored"></i> Django</span>
                     <span class="tech-tag"><i class="devicon-sqlite-plain colored"></i>SQLite3</span>
-                    <span class="tech-tag"><i class="devicon-stripe-plain colored"></i> Stripe API</span>
+                    <span class="tech-tag">
+                        <img src="assests/stripe.svg" alt="Stripe" style="width: 20px; height: 20px;"> Stripe API
+                    </span>
                 </div>
                 <div class="project-links">
                     <a href="https://github.com/BILALAKRAM27/BUZTable" target="_blank">GitHub</a>
@@ -1557,7 +1565,7 @@
             <div class="project-content">
                 <h3>AI Model for Detecting Sign Language</h3>
                 <h4>Real-Time Sign Language Interpreter</h4>
-                <p>An AI-powered web application that translates American Sign Language (ASL) hand gestures into natural language sentences in real-time, with contextual explanation and multi-language translation support.</p>
+                <p>An AI-powered web application that translates American Sign Language (ASL) hand gestures into natural language sentences in real time. The system provides contextual explanations, supports multi-language translation, and maintains a conversation history.</p>
                 <div class="project-tech">
                     <span class="tech-tag"><i class="devicon-python-plain colored"></i> Python</span>
                     <span class="tech-tag"><i class="devicon-streamlit-plain colored"></i> Streamlit</span>
@@ -1586,12 +1594,14 @@
             <div class="project-content">
                 <h3>IoT & Embedded Systems Project</h3>
                 <h4>Remote, Bluetooth & Voice Controlled Car</h4>
-                <p>A hardware-software integrated IoT project that enables wireless control of a remote-controlled car using Bluetooth and voice commands via an Android app and Arduino-based circuit.</p>
+                <p>An  hardware–software integrated project featuring an Arduino Uno, L298N motor driver, and Bluetooth module. The system enables wireless control of a RC car through Bluetooth and voice commands via an Android application.</p>
                 <div class="project-tech">
                     <span class="tech-tag"><i class="devicon-arduino-plain colored"></i> Arduino</span>
                     <span class="tech-tag"><i class="devicon-cplusplus-plain colored"></i> C++</span>
                     <span class="tech-tag"><img src="assests/bluetooth.svg" alt="HC-05 Bluetooth Module" style="width: 20px; height: 20px;"> Bluetooth Module</span>
-                    <span class="tech-tag"><i class="devicon-l298n-plain colored"></i> L298N Motor Driver</span>
+                    <span class="tech-tag">
+                        <img src="assests/motor-controller.svg" alt="Scikit-learn" style="width: 20px; height: 20px;">L298N Motor Driver
+                    </span>
                     <span class="tech-tag"><i class="devicon-android-plain colored"></i> Android App</span>
                 </div>
                 <div class="project-links">
@@ -1600,7 +1610,142 @@
             </div>
         </div>
 
+
+        <div class="project-card fade-in" onclick="openModal('project4')">
+            <div class="project-image"><img src="assests/MarketVibe.png" alt="MarketVibe" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <div class="project-content">
+                <h3>MarketVibe</h3>
+                <h4>Advanced Multi-Vendor E-commerce Platform</h4>
+                <p>A multi-vendor e-commerce platform, featuring advanced seller/buyer management, Stripe Connect payment processing, dynamic product catalog, gift box campaigns, smart search system, quotes system, newsletter subscription, and a robust order management system. It's a software that empowers sellers to create and manage their own digital storefronts and allows buyers to browse, purchase, and engage with a wide range of products from multiple vendors in one seamless experience.</p>
+                <div class="project-tech">
+                    <span class="tech-tag"><i class="devicon-html5-plain colored"></i> HTML</span>
+                    <span class="tech-tag"><i class="devicon-css3-plain colored"></i> CSS</span>
+                    <span class="tech-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                    <span class="tech-tag"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</span>
+                    <span class="tech-tag"><i class="devicon-django-plain colored"></i> Django</span>
+                    <span class="tech-tag"><i class="devicon-sqlite-plain colored"></i>SQLite3</span>
+                    <span class="tech-tag">
+                        <img src="assests/stripe.svg" alt="Stripe" style="width: 20px; height: 20px;"> Stripe API
+                    </span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/BILALAKRAM27/ecommerce-fullstack-design.git" target="_blank">GitHub</a>
+            
+                    <a href="https://www.linkedin.com/posts/bilalakram27-software-engineer_internshipexperience-softwaredevelopment-activity-7359200453038944256-xehb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc" target="_blank">Project Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in" onclick="openModal('project5')">
+            <div class="project-image"><img src="assests/CoFound.png" alt="CoFound" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <div class="project-content">
+                <h3>CoFound</h3>
+                <h4>Professional Networking Platform for Entrepreneurs & Investors</h4>
+                <p>CoFound is a professional networking platform built with Django, designed to connect entrepreneurs and investors. It provides a modern, secure environment for networking, meeting schedules, Fund raising content sharing, and real-time messaging, enabling users to collaborate, share ideas, and accelerate startup growth. This integrated solution is perfect for entrepreneurs seeking funding or mentorship, and for investors looking for promising startups and networking opportunities as well.</p>
+                <div class="project-tech">
+                    <span class="tech-tag"><i class="devicon-html5-plain colored"></i> HTML</span>
+                    <span class="tech-tag"><i class="devicon-css3-plain colored"></i> CSS</span>
+                    <span class="tech-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                    <span class="tech-tag"><i class="devicon-bootstrap-plain colored"></i> Bootstrap</span>
+                    <span class="tech-tag"><i class="devicon-django-plain colored"></i> Django</span>
+                    <span class="tech-tag"><i class="devicon-sqlite-plain colored"></i>SQLite3</span>
+                    <span class="tech-tag"><i class="devicon-django-plain colored"></i> Daphne</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/BILALAKRAM27/CoFound.git" target="_blank">GitHub</a>
+            
+                    <a href="https://www.linkedin.com/posts/bilalakram27-software-engineer_from-code-to-confidence-my-internship-activity-7367319544081657856-SfVP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc" target="_blank">Project Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in" onclick="openModal('project6')">
+            <div class="project-image"><img src="assests/gallery.png" alt="Photo Gallery" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <div class="project-content">
+                <h3>Photo Gallery</h3>
+                <h4>A Museum-Inspired Web Application</h4>
+                <p>The Photo Gallery is a web application where users can upload and manage their pictures in a museum-like environment. Photos can be set as private or public, which allows for social interaction through likes 💖 and comments 💬. It's a software that enables users to curate their own collections and engage with others' "exhibits" in a creative, collaborative space. The platform offers a secure and visually appealing interface, making it easy to organize, share, and discover captivating visual content. It provides a seamless experience for both casual users and art enthusiasts alike to build a personal gallery.</p>
+                <div class="project-tech">
+                    <span class="tech-tag"><i class="devicon-html5-plain colored"></i> HTML</span>
+                    <span class="tech-tag"><i class="devicon-css3-plain colored"></i> CSS</span>
+                    <span class="tech-tag"><i class="devicon-javascript-plain colored"></i> JavaScript</span>
+                    <span class="tech-tag"><i class="devicon-tailwindcss-plain colored"></i> Tailwind CSS</span>
+                    <span class="tech-tag"><i class="devicon-django-plain colored"></i> Django</span>
+                    <span class="tech-tag"><i class="devicon-sqlite-plain colored"></i>SQLite3</span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/BILALAKRAM27/Photo-Gallery-Django-Tailwind-project.git" target="_blank">GitHub</a>
+            
+                    <a href="https://www.linkedin.com/posts/bilalakram27-software-engineer_django-tailwindcss-webdevelopment-activity-7364037378543439872-wDTL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc" target="_blank">Project Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in" onclick="openModal('project7')">
+            <div class="project-image"><img src="assests/email_sapm.png" alt="Email Spam Classifier" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <div class="project-content">
+                <h3>Email Spam Classifier</h3>
+                <h4>Machine learning-powered spam detection system</h4>
+                <p>An advanced machine learning-powered spam detection system that uses multiple models to classify emails as spam or legitimate. The system provides detailed explanations for its decisions and allows model performance comparison.</p>
+                <div class="project-tech">
+                    <span class="tech-tag"><i class="devicon-streamlit-plain colored"></i> Streamlit</span>
+                    <span class="tech-tag"><i class="devicon-numpy-plain colored"></i> numpy</span>
+                    <span class="tech-tag">
+                        <img src="assests/scikitlearn.svg" alt="Scikit-learn" style="width: 20px; height: 20px;"> Scikit-learn
+                    </span>
+                    <span class="tech-tag">
+                        <img src="assests/lime.png" alt="Scikit-learn" style="width: 20px; height: 20px;">Lime
+                    </span>
+                    <span class="tech-tag">
+                        <img src="assests/joblib.png" alt="Scikit-learn" style="width: 20px; height: 20px;">Joblib
+                    </span>
+                    <span class="tech-tag">
+                        <img src="assests/seaborn-1.svg" alt="Scikit-learn" style="width: 20px; height: 20px;">Seaborn
+                    </span>
+                    <span class="tech-tag"><i class="devicon-matplotlib-plain colored"></i> matplotlib </span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/BILALAKRAM27/Email-Spam-Classifier.git" target="_blank">GitHub</a>
+            
+                    <a href="https://www.linkedin.com/posts/bilalakram27-software-engineer_machinelearning-datascience-streamlit-activity-7360003198197084162-JBZ6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc" target="_blank">Project Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-card fade-in" onclick="openModal('project8')">
+            <div class="project-image"><img src="assests/minst.png" alt="Email Spam Classifier" style="width: 100%; height: 100%; object-fit: cover;"></div>
+            <div class="project-content">
+                <h3>MNIST Digit Recognition</h3>
+                <h4>A Complete Machine Learning Project for Handwritten Digit Recognition</h4>
+                <p>An MNIST handwritten digit recognition project using both Logistic Regression and a Convolutional Neural Network (CNN). Deployed with a Streamlit web app, it enables users to draw or upload digits for real-time predictions, demonstrating model complexity and image interpretation.</p>
+                <div class="project-tech">
+                    <span class="tech-tag"><i class="devicon-streamlit-plain colored"></i> Streamlit</span>
+                    <span class="tech-tag"><i class="devicon-numpy-plain colored"></i> numpy</span>
+                    <span class="tech-tag">
+                        <img src="assests/scikitlearn.svg" alt="Scikit-learn" style="width: 20px; height: 20px;"> Scikit-learn
+                    </span>
+                    <span class="tech-tag">
+                        <img src="assests/tensorflow-svgrepo-com.svg" alt="Scikit-learn" style="width: 20px; height: 20px;">TensorFlow
+                    </span>
+                    <span class="tech-tag">
+                        <img src="assests/joblib.png" alt="Scikit-learn" style="width: 20px; height: 20px;">Joblib
+                    </span>
+                    <span class="tech-tag">
+                        <img src="assests/keras-svgrepo-com.svg" alt="Scikit-learn" style="width: 20px; height: 20px;">Keras
+                    </span>
+                    <span class="tech-tag"><i class="devicon-matplotlib-plain colored"></i> matplotlib </span>
+                </div>
+                <div class="project-links">
+                    <a href="https://github.com/BILALAKRAM27/MINST-Digit-Recognition.git" target="_blank">GitHub</a>
+            
+                    <a href="https://www.linkedin.com/posts/bilalakram27-software-engineer_machinelearning-deeplearning-computervision-activity-7360344511501234178-G85m?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc" target="_blank">Project Demo</a>
+                </div>
+            </div>
+        </div>
     </div>
+
+    
+    
 </section>
 
 
@@ -1740,7 +1885,7 @@
 
 
 <!-- Contact Section -->
-<section id="contact" class="section contact">
+<section id="contact" class="section contact" style="margin-bottom: 2rem;">
     <h2 class="section-title">Get In Touch</h2>
     <div class="contact-intro" style="text-align: center; margin-bottom: 2rem">
         <h3>Let's Connect!</h3>
@@ -2062,7 +2207,63 @@ document.addEventListener('DOMContentLoaded', function() {
         outcomes: "Successfully developed a remote-controlled car capable of Bluetooth and voice-based navigation.",
         lessons: "Improved hands-on experience with Arduino hardware, Bluetooth communication, and Android app integration.",
         demo: "https://www.linkedin.com/posts/bilal-akram-081b86268_arduino-ai-innovation-activity-7322248346641833984-bKKW?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc"     // No demo link either
+    },
+    project4: {
+        title: "MarketVibe (Advanced Multi-Vendor E-commerce Platform)",
+        description: "A comprehensive multi-vendor e-commerce platform, featuring advanced seller/buyer management, Stripe Connect payment processing, dynamic product catalog, gift box campaigns, smart search system, quotes system, newsletter subscription, and a robust order management system. It empowers sellers to create and manage their own digital storefronts and allows buyers to browse, purchase, and provide seamless experience.",
+        technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Django", "SQLite3", "Stripe API"],
+        role: "Full-Stack Developer",
+        outcomes: "Enabled sellers to create and manage their own digital storefronts and allows buyers to browse, purchase, and provide seamless experience.",
+        lessons: "Gained deep understanding of Django ORM, authentication systems, and Stripe payment integration.",
+        github: "https://github.com/BILALAKRAM27/ecommerce-fullstack-design.git",
+        project_demo: "https://www.linkedin.com/posts/bilalakram27-software-engineer_internshipexperience-softwaredevelopment-activity-7359200453038944256-xehb?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc",
+
+    },
+    project5: {
+        title: "CoFound (Professional Networking Platform for Entrepreneurs & Investors)",
+        description: "A professional networking platform built with Django, designed to connect entrepreneurs and investors. It provides a modern, secure environment for networking, content sharing, and real-time messaging, enabling users to collaborate, share ideas, and accelerate startup growth. This integrated solution is perfect for entrepreneurs seeking funding or mentorship, and for investors looking for promising startups and networking opportunities.",
+        technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Django", "SQLite3", "Daphne"],
+        role: "Full-Stack Developer",
+        outcomes: "Enabled entrepreneurs and investors to collaborate, share ideas, and accelerate startup growth.",
+        lessons: "Gained deep understanding of Django ORM, authentication systems, and Daphne.",
+        github: "https://github.com/BILALAKRAM27/CoFound.git",
+        project_demo: "https://www.linkedin.com/posts/bilalakram27-software-engineer_from-code-to-confidence-my-internship-activity-7367319544081657856-SfVP?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc",
+
+    },
+    project6: {
+        title: "Photo Gallery (A Museum-Inspired Web Application)",
+        description: "A web application where users can upload and manage their pictures in a museum-like environment. Photos can be set as private (visible only to the uploader) or public (visible to all users), which allows for social interaction through likes 💖 and comments 💬. It's a software-integrated solution that enables users to curate their own collections and engage with others' 'exhibits' in a creative, collaborative space.",
+        technologies: ["HTML", "CSS", "JavaScript", "Bootstrap", "Django", "SQLite3", "Tailwind CSS"],
+        role: "Full-Stack Developer",
+        outcomes: "Enabled entrepreneurs and investors to collaborate, share ideas, and accelerate startup growth.",
+        lessons: "Gained deep understanding of Django ORM, authentication systems, and Tailwind CSS.",
+        github: "https://github.com/BILALAKRAM27/Photo-Gallery-Django-Tailwind-project.git",
+        project_demo: "https://www.linkedin.com/posts/bilalakram27-software-engineer_django-tailwindcss-webdevelopment-activity-7364037378543439872-wDTL?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc",
+
+    },
+    project7: {
+        title: "Email Spam Classifier",
+        description: "An advanced machine learning-powered spam detection system that uses multiple models to classify emails as spam or legitimate. The system provides detailed explanations for its decisions and allows model performance comparison.",
+        technologies: ["Streamlit", "numpy", "Scikit-learn", "Joblib", "Seaborn", "matplotlib", "Lime"],
+        role: "Machine Learning & Full-Stack Developer",
+        outcomes: "Delivered an interactive, user-friendly tool for visualizing and comparing model performance, improving transparency and trust in machine learning predictions.",
+        lessons: "Enhanced knowledge of machine learning pipelines, model deployment with Streamlit, explainable AI techniques (LIME), and data visualization best practices.",
+        github: "https://github.com/BILALAKRAM27/Email-Spam-Classifier.git",
+        project_demo: "https://www.linkedin.com/posts/bilalakram27-software-engineer_machinelearning-datascience-streamlit-activity-7360003198197084162-JBZ6?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc",
+
+    },
+    project8: {
+        title: "MNIST Digit Recognition",
+        description: "An MNIST handwritten digit recognition project using both Logistic Regression and a Convolutional Neural Network (CNN). Deployed with a Streamlit web app, it enables users to draw or upload digits for real-time predictions, demonstrating model complexity and image interpretation.",
+        technologies: ["Streamlit", "numpy", "Scikit-learn", "Joblib", "TensorFlow", "matplotlib","Keras"],
+        role: "Machine Learning & Full-Stack Developer",
+        outcomes: "Built an interactive digit recognition platform that demonstrates deep learning capabilities, enabling real-time user engagement and comparison of classical ML and CNN models.",
+        lessons: "Gained hands-on experience with deep learning (CNNs), model training and evaluation, deployment with Streamlit, and enhancing user interaction through real-time image-based predictions.",
+        github: "https://github.com/BILALAKRAM27/MINST-Digit-Recognition.git",
+        project_demo: "https://www.linkedin.com/posts/bilalakram27-software-engineer_machinelearning-deeplearning-computervision-activity-7360344511501234178-G85m?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEGrdOEBvtpgXt453YAVaDk0y45ZzfKzZIc",
+
     }
+    
 };
 
 
@@ -2081,6 +2282,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (project.demo) {
             buttonsHTML += `<a href="${project.demo}" target="_blank" class="btn btn-secondary">Live Demo</a>`;
+        }
+        if (project.project_demo) {
+            buttonsHTML += `<a href="${project.project_demo}" target="_blank" class="btn btn-secondary">Project Demo</a>`;
         }
         
         buttonsHTML += '</div>';
